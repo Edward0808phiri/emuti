@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f3f3;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  display: flex;
+  height: 100vh;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(180deg, #4b0082, #228b22);
+  color: white;
+  width: 250px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  position: fixed;
+  height: 100%;
+  z-index: 10;
+}
+.sidebar.open {
+  transform: translateX(0);
+}
+.sidebar h2 {
+  margin-top: 0;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin: 15px 0;
+  cursor: pointer;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  float: right;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Main */
+.main-content {
+  flex: 1;
+  margin-left: 0;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #e0e0e0;
+  padding: 10px 20px;
+}
+.profile-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #6a0dad;
+}
+
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+.chat-bubble {
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 70%;
+}
+.chat-bubble.user {
+  background-color: #228b22;
   color: white;
+  align-self: flex-end;
+}
+.chat-bubble.bot {
+  background-color: #d8bfd8;
+  color: #333;
+}
+.loading {
+  color: gray;
+  font-style: italic;
 }
 
-.App-link {
-  color: #61dafb;
+/* Input Area */
+.input-area {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+.input-area button {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mic-btn {
+  background-color: #228b22 !important;
 }
